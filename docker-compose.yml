@@ -1,0 +1,12 @@
+version: "3"
+services:
+ web:
+    image: sample-spring-boot-docker:0.0.1-snapshot
+    ports:
+    - 8080:8080
+ client:
+    image: sample-client-spring-boot-docker
+    environment:
+    - app_host=http://web:8080
+    ports:
+    - 9000:9000
